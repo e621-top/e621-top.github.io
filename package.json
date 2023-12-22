@@ -1,0 +1,32 @@
+{
+  "name": "e621-top",
+  "version": "1.0.0",
+  "description": "Auto-updatable website with links to radio Record stations",
+  "author": "e621-top",
+  "license": "MIT",
+  "repository": "e621-top/e621-top.github.io",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.2.0",
+    "@types/bootstrap": "^5.2.10",
+    "@types/lodash-es": "^4.17.12",
+    "eslint": "^8.55.0",
+    "nuxt": "^3.8.2",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0"
+  },
+  "type": "module",
+  "private": true
+}

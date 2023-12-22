@@ -1,0 +1,46 @@
+@import "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Fira+Mono:wght@400;500;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap";
+
+// e621 Colors
+$hexagon-color-background: #020f23;
+$hexagon-color-foreground: #152f56;
+$hexagon-color-link: #b4c7d9;
+$hexagon-color-link-hover: #e9f2fa;
+$hexagon-color-text: #ffffff;
+$hexagon-color-text-muted: #999999;
+$hexagon-color-section: #1f3c67;
+$hexagon-color-section-border: $hexagon-color-background;
+
+$color-section-lighten-5: lighten($hexagon-color-section, 5%);
+$color-section-lighten-10: lighten($hexagon-color-section, 10%);
+$color-section-darken-5: darken($hexagon-color-section, 5%);
+$color-table-border: lighten($hexagon-color-section, 10%);
+
+// Bootstrap Overrides
+// Colors
+$primary: $color-section-lighten-5;
+
+// Fonts
+$font-family-monospace: "Fira Mono";
+$font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+
+// Links
+$link-color: $hexagon-color-link;
+$link-color-dark: $hexagon-color-link;
+
+// Body
+$body-bg: $hexagon-color-foreground;
+$body-bg-dark: $hexagon-color-foreground;
+$body-color: $hexagon-color-text;
+$body-color-dark: $hexagon-color-text;
+
+// Card
+//$card-bg: $neutrals-700;
+$card-spacer-y: .5rem;
+$card-spacer-x: .5rem;
+
+// Input
+//$input-group-addon-color: $color-section-lighten-5;
+$input-group-addon-bg: $color-section-lighten-5;
+//$input-group-addon-border-color: $input-border-color;
+$input-bg: $color-section-darken-5;
