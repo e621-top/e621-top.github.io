@@ -1,0 +1,20 @@
+{
+    "name": "e621-top",
+    "short_name": "e621-top",
+    "icons": [
+        {
+            "src": "/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1f3c67",
+    "background_color": "#1f3c67",
+    "start_url": "https://e621-top.github.io/",
+    "display": "standalone"
+}

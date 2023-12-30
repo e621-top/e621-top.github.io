@@ -1,27 +1,29 @@
 <script setup lang="ts">
+const logo = "https://e621-top.github.io/img/logo-top.png";
+
 useHead({
-  title: "Character Top - e621",
-  link: [
-    { rel: "icon", type: "image/png", href: "https://e621.net/favicon.ico" }
-  ],
+  titleTemplate: (title) => (title ? `${title} - ` : "") + "e621-top",
   meta: [
-    { name: "description", content: "Automatic e621 character top" }
+    { name: "description", content: "Automatic e621 tag top" }
   ],
-  htmlAttrs: {
-    "data-bs-theme": "dark"
-  }
+  htmlAttrs: { lang: "en", "data-bs-theme": "dark" }
 });
 useSeoMeta({
   ogType: "website",
-  ogTitle: "Character Top - 621",
-  ogSiteName: "Character Top - 621",
+  ogTitle: "621-top",
+  ogSiteName: "621-top",
   ogUrl: "https://e621-top.github.io/",
-  ogDescription: "Automatic e621 character top",
-  ogImage: "https://e621-top.github.io/img/logo-crystal.png",
-  ogImageSecureUrl: "https://e621-top.github.io/img/logo-crystal.png"
+  ogDescription: "Automatic e621 tag top",
+  ogImage: logo,
+  ogImageSecureUrl: logo,
+  twitterTitle: "e621-top",
+  twitterDescription: "Automatic e621 tag top",
+  twitterImage: logo,
+  twitterCard: "summary"
 });
 </script>
 <template>
+  <PageFavicon />
   <div class="min-vh-100 d-flex flex-column">
     <PageHeader />
     <main id="main" class="flex-grow-1 flex-shrink-0">
