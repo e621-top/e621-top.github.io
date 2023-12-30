@@ -1,3 +1,5 @@
+export type Category = "artist" | "character"
+
 export interface Tag {
   id: number
   name: string

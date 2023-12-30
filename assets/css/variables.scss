@@ -21,8 +21,8 @@ $color-table-border: lighten($hexagon-color-section, 10%);
 $primary: $color-section-lighten-5;
 
 // Fonts
-$font-family-monospace: "Fira Mono";
-$font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+$font-family-sans-serif: "Fira Mono", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: "Fira Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
 // Links
 $link-color: $hexagon-color-link;
@@ -35,9 +35,8 @@ $body-color: $hexagon-color-text;
 $body-color-dark: $hexagon-color-text;
 
 // Card
-//$card-bg: $neutrals-700;
-$card-spacer-y: .5rem;
-$card-spacer-x: .5rem;
+$card-spacer-y: .8rem;
+$card-spacer-x: .8rem;
 
 // Input
 //$input-group-addon-color: $color-section-lighten-5;

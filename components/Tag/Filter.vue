@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import type { Category } from "~/types";
+const props = defineProps<{ category?: Category }>();
+
 const filter = useFilter();
 
 const hideMLP = ref(false);
@@ -19,6 +22,7 @@ function clear() {
   exclude.value = "";
   apply();
 }
+clear();
 </script>
 <template>
   <div class="font-monospace">
@@ -31,13 +35,13 @@ function clear() {
       <input v-model="exclude" type="text" class="form-control" placeholder="Input regex" aria-label="Exclude" aria-describedby="inputExclude">
     </div>
     <div class="d-flex justify-content-between align-items-center">
-      <div class="form-check">
+      <div :hidden="props.category != 'character'" class="form-check">
         <input id="checkHideMLP" v-model="hideMLP" class="form-check-input" type="checkbox" @change="apply">
         <label class="form-check-label" for="checkHideMLP">
           Hide MLP
         </label>
       </div>
-      <div class="btn-group">
+      <div class="btn-group ms-auto">
         <button class="btn btn-primary" @click="apply">
           Apply
         </button>
@@ -47,5 +51,4 @@ function clear() {
       </div>
     </div>
   </div>
-  <!-- <div>{{ filter.hideMLP }} {{ filter.include }}</div> -->
 </template>

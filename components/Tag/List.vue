@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { Data } from "~/types";
+import type { Category, Data } from "~/types";
+const props = defineProps<{ category: Category }>();
 
 const endpoint_site = "https://e621-top.github.io";
-const { data } = useFetch<Data>(`${endpoint_site}/data/character.json`);
+const { data, pending } = useFetch<Data>(`${endpoint_site}/data/${props.category}.json`, { server: false });
 const filter = useFilter();
 
 const filtered = computed(() => {
@@ -24,30 +25,33 @@ const tags = computed(() => {
 });
 </script>
 <template>
-  <div class="card my-1">
+  <TagFilter :category="props.category" />
+  <div v-if="pending" class="card my-1">
+    <div class="card-header text-muted">
+      Loading...
+    </div>
+  </div>
+  <div v-else class="card my-1">
     <div class="card-header text-muted text-end">
       Updated at: {{ formatDate(new Date(data?.updated_at ?? 0)) }}
     </div>
     <div class="card-body">
-      <table v-if="tags" class="table table-striped">
+      <table class="table table-striped">
         <colgroup>
           <template v-if="filtered">
-            <col style="width:5rem">
-            <col style="width:5rem">
-          </template>
-          <template v-else>
             <col style="width:0.5rem">
           </template>
+          <col style="width:0.5rem">
           <col style="width:auto">
           <col style="width:5rem">
           <col style="width:1rem">
         </colgroup>
         <thead>
-          <th v-if="filtered" scope="col">
-            Local #
+          <th v-if="filtered" v-tooltip title="Local rank" scope="col">
+            #
           </th>
-          <th scope="col">
-            {{ filtered ? "Global " : "" }}#
+          <th v-tooltip:top scope="col" title="Global rank">
+            #
           </th>
           <th scope="col">
             Name
@@ -55,11 +59,11 @@ const tags = computed(() => {
           <th scope="col">
             Count
           </th>
-          <th scope="col">
+          <th v-tooltip title="Change since last update" scope="col">
             ∆
           </th>
         </thead>
-        <tbody>
+        <tbody v-if="tags">
           <tr v-for="tag in tags" :key="tag.id">
             <th v-if="filtered" scope="row">
               {{ tag.local }}
