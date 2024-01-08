@@ -1,0 +1,3 @@
+User-agent: * 
+Allow: /
+Sitemap: https://e621-top.github.io/sitemap.xml
