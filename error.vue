@@ -15,8 +15,10 @@ interface Props {
   <div class="min-vh-100 d-flex flex-column">
     <PageHeader />
     <main id="main" class="flex-grow-1 flex-shrink-0">
-      <ErrorNotFound v-if="statusCode == 404" />
-      <ErrorCommon v-else :error="props.error" />
+      <div class="container p-3">
+        <ErrorNotFound v-if="statusCode == 404" />
+        <ErrorCommon v-else :error="props.error" />
+      </div>
     </main>
     <PageFooter />
   </div>
