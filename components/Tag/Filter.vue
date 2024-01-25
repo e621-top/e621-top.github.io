@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Category } from "~/types";
 const props = defineProps<{ category?: Category }>();
 
 const filter = useFilter();

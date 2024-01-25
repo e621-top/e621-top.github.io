@@ -1,6 +1,6 @@
-export type Category = "artist" | "character"
+type Category = "artist" | "character"
 
-export interface Tag {
+interface Tag {
   id: number
   name: string
   post_count: number
@@ -9,7 +9,26 @@ export interface Tag {
   post_delta?: number
 }
 
-export interface Data {
+interface TagLocal extends Tag {
+  local: number
+}
+
+interface TagCount {
+  name: string
+  post_count: number
+}
+
+interface Data {
   updated_at: Date
   tags: Tag[]
+}
+
+interface FavoriteTags {
+  artist: TagCount[]
+  character: TagCount[]
+}
+
+interface FavoriteData {
+  username: string
+  tags: FavoriteTags
 }

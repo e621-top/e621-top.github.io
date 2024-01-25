@@ -31,9 +31,19 @@
               All character tags with 100+ posts
             </div>
           </li>
+          <li>
+            <NuxtLink to="/favorites/">
+              <b>
+                Favorites
+              </b>
+            </NuxtLink>
+            <div>
+              Favorite artists and characters (First 10 pages only)
+            </div>
+          </li>
         </ul>
         <p>
-          The lists are updated daily
+          Artist and Character lists are updated daily.
         </p>
       </div>
     </div>

@@ -12,4 +12,8 @@
     <loc>https://e621-top.github.io/character/</loc>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://e621-top.github.io/favorites/</loc>
+    <priority>0.80</priority>
+  </url>
 </urlset>

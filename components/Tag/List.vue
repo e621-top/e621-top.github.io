@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Category, Data } from "~/types";
 const props = defineProps<{ category: Category }>();
 
 const endpoint_site = "https://e621-top.github.io";
@@ -8,7 +7,7 @@ const filter = useFilter();
 
 const filtered = computed(() => {
   const { hideMLP, include, exclude } = filter.value;
-  return hideMLP || include || exclude;
+  return hideMLP || !!include || !!exclude;
 });
 
 const tags = computed(() => {
@@ -36,51 +35,7 @@ const tags = computed(() => {
       Updated at: {{ formatDate(new Date(data?.updated_at ?? 0)) }}
     </div>
     <div class="card-body">
-      <table class="table table-striped">
-        <colgroup>
-          <template v-if="filtered">
-            <col style="width:0.5rem">
-          </template>
-          <col style="width:0.5rem">
-          <col style="width:auto">
-          <col style="width:5rem">
-          <col style="width:1rem">
-        </colgroup>
-        <thead>
-          <th v-if="filtered" v-tooltip title="Local rank" scope="col">
-            #
-          </th>
-          <th v-tooltip:top scope="col" title="Global rank">
-            #
-          </th>
-          <th scope="col">
-            Name
-          </th>
-          <th scope="col">
-            Count
-          </th>
-          <th v-tooltip title="Change since last update" scope="col">
-            ∆
-          </th>
-        </thead>
-        <tbody v-if="tags">
-          <tr v-for="tag in tags" :key="tag.id">
-            <th v-if="filtered" scope="row">
-              {{ tag.local }}
-            </th>
-            <th scope="row">
-              {{ tag.position }}
-            </th>
-            <td>
-              <NuxtLink target="_blank" :to="`https://e621.net/posts?tags=${tag.name}`">
-                {{ tag.name }}
-              </NuxtLink>
-            </td>
-            <td>{{ tag.post_count }}</td>
-            <td>{{ (tag?.post_delta ?? 0) > 0 ? "+" : "" }}{{ tag.post_delta ?? "-" }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <TableTag :tags="tags" :filtered="filtered" />
     </div>
   </div>
 </template>
