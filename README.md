@@ -1,6 +1,6 @@
 # e621-top.github.io [![Build artifact][build-src]][build-href] [![Netlify Status][netlify-src]][netlify-href]
 
-Automatically updated artist and character tag tops of e621.net
+Automatically updated top of artists and characters by number of posts on e621.net
 
 <!-- Badges -->
 [build-src]: https://img.shields.io/github/actions/workflow/status/e621-top/e621-top.github.io/build.yml?label=Build&logo=github

@@ -21,13 +21,13 @@
             </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="https://e621.net/" target="_blank">
-              e621.net
+            <NuxtLink class="nav-link" to="/favorites/" active-class="active">
+              Favorites
             </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="https://e926.net/" target="_blank">
-              e926.net
+            <NuxtLink class="nav-link" to="/about/" active-class="active">
+              About
             </NuxtLink>
           </li>
         </ul>

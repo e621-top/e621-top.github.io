@@ -1,14 +1,14 @@
 <template>
   <div class="container p-3">
     <div class="card">
-      <div class="card-header">
+      <div class="card-header text-center">
         <b>
           e621-top
         </b>
       </div>
       <div class="card-body">
         <p>
-          Automatically updated artist and character tag tops of e621.net
+          Automatically updated top of popular artists and characters on e621.net
         </p>
         <ul>
           <li>
@@ -38,13 +38,13 @@
               </b>
             </NuxtLink>
             <div>
-              Favorite artists and characters (First 10 pages only)
+              Top popular artists and characters by specified user
             </div>
           </li>
         </ul>
-        <p>
-          Artist and Character lists are updated daily.
-        </p>
+      </div>
+      <div class="card-footer text-center text-muted">
+        Artist and Character lists are updated daily
       </div>
     </div>
   </div>
