@@ -5,7 +5,7 @@ const props = defineProps<{ tags?: TagCount[] }>();
   <table class="table table-striped">
     <colgroup>
       <col style="width:auto">
-      <col style="width:5rem">
+      <col style="width:2.5rem">
     </colgroup>
     <thead>
       <th scope="col">
