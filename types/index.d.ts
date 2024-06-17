@@ -7,10 +7,7 @@ interface Tag {
   created_at: string
   position: number
   post_delta?: number
-}
-
-interface TagLocal extends Tag {
-  local: number
+  local?: number
 }
 
 interface TagCount {
@@ -26,9 +23,4 @@ interface Data {
 interface FavoriteTags {
   artist: TagCount[]
   character: TagCount[]
-}
-
-interface FavoriteData {
-  username: string
-  tags: FavoriteTags
 }

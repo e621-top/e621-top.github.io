@@ -1,9 +1,10 @@
 <script setup lang="ts">
-const logo = "https://e621-top.github.io/img/logo-top.png";
+const title = "e621-top";
 const description = "Automatically updated top of artists and characters by number of posts on e621.net";
+const logo = "https://e621-top.github.io/img/logo-top.png";
 
 useHead({
-  titleTemplate: (title) => (title ? `${title} - ` : "") + "e621-top",
+  titleTemplate: (t) => (t ? `${t} - ` : "") + title,
   meta: [
     { name: "description", content: description }
   ],
@@ -11,13 +12,13 @@ useHead({
 });
 useSeoMeta({
   ogType: "website",
-  ogTitle: "621-top",
-  ogSiteName: "621-top",
+  ogTitle: title,
+  ogSiteName: title,
   ogUrl: "https://e621-top.github.io/",
   ogDescription: description,
   ogImage: logo,
   ogImageSecureUrl: logo,
-  twitterTitle: "e621-top",
+  twitterTitle: title,
   twitterDescription: description,
   twitterImage: logo,
   twitterCard: "summary"

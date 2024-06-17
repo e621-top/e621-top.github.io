@@ -44,12 +44,13 @@ function toArray(tags: Record<string, number>): TagCount[] {
     .toSorted((a, b) => b.post_count - a.post_count);
 }
 
-async function getFavorites(username: string, limit: number): Promise<FavoriteTags> {
+async function getFavorites(username: string, limit: number, report: (page: number) => void): Promise<FavoriteTags> {
   const artist: Record<string, number> = {};
   const character: Record<string, number> = {};
 
   for (let page = 1; ; page++) {
     console.info(`Fetching page: ${page}`);
+    report(page);
     const { posts } = await getPosts(username, page);
     countTags(posts.flatMap(P => P.tags.artist), artist);
     countTags(posts.flatMap(P => P.tags.character), character);

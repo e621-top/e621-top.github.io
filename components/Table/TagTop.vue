@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<Props>();
 interface Props {
-  tags?: TagLocal[]
+  tags?: Tag[]
   filtered: boolean
 }
 </script>

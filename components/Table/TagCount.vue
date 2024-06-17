@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const props = defineProps<{ tags?: TagCount[] }>();
+const props = defineProps<Props>();
+interface Props {
+  tags?: TagCount[]
+  username: string
+}
 </script>
 <template>
   <table class="table table-striped">
@@ -22,7 +26,11 @@ const props = defineProps<{ tags?: TagCount[] }>();
             {{ tag.name }}
           </NuxtLink>
         </td>
-        <td>{{ tag.post_count }}</td>
+        <td>
+          <NuxtLink target="_blank" :to="`https://e621.net/posts?tags=fav:${props.username}+${tag.name}`">
+            {{ tag.post_count }}
+          </NuxtLink>
+        </td>
       </tr>
     </tbody>
   </table>

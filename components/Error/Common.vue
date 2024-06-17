@@ -3,7 +3,7 @@ const props = defineProps<Props>();
 const handleError = () => clearError({ redirect: "/" });
 
 interface Props {
-  error: Object
+  error: unknown
 }
 </script>
 <template>
@@ -19,4 +19,3 @@ interface Props {
     Clear errors
   </button>
 </template>
-
