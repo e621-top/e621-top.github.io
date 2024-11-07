@@ -17,21 +17,23 @@ interface Props {
       <col style="width:1rem">
     </colgroup>
     <thead>
-      <th v-if="props.filtered" v-tooltip title="Local rank" scope="col">
-        #
-      </th>
-      <th v-tooltip:top scope="col" title="Global rank">
-        #
-      </th>
-      <th scope="col">
-        Name
-      </th>
-      <th scope="col">
-        Count
-      </th>
-      <th v-tooltip title="Change since last update" scope="col">
-        ∆
-      </th>
+      <tr>
+        <th v-if="props.filtered" v-tooltip title="Local rank" scope="col">
+          #
+        </th>
+        <th v-tooltip:top scope="col" title="Global rank">
+          #
+        </th>
+        <th scope="col">
+          Name
+        </th>
+        <th scope="col">
+          Count
+        </th>
+        <th v-tooltip title="Change since last update" scope="col">
+          ∆
+        </th>
+      </tr>
     </thead>
     <tbody v-if="props.tags">
       <tr v-for="tag in props.tags" :key="tag.id">

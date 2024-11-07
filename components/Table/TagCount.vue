@@ -12,12 +12,14 @@ interface Props {
       <col style="width:2.5rem">
     </colgroup>
     <thead>
-      <th scope="col">
-        Name
-      </th>
-      <th scope="col">
-        Count
-      </th>
+      <tr>
+        <th scope="col">
+          Name
+        </th>
+        <th scope="col">
+          Count
+        </th>
+      </tr>
     </thead>
     <tbody v-if="props.tags">
       <tr v-for="tag in props.tags" :key="tag.name">
