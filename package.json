@@ -18,14 +18,13 @@
     "nuxt-gtag": "^2.0.6"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^0.3.13",
+    "@nuxt/eslint": "^0.6.1",
     "@types/bootstrap": "^5.2.10",
-    "eslint": "^9.5.0",
-    "nuxt": "^3.12.2",
-    "sass": "^1.77.5",
-    "sass-loader": "^14.2.1",
-    "typescript": "^5.4.5",
-    "webpack": "^5.92.0"
+    "eslint": "^9.14.0",
+    "nuxt": "^3.14.159",
+    "sass-loader": "^16.0.3",
+    "sass": "^1.80.6",
+    "typescript": "^5.6.3"
   },
   "type": "module",
   "private": true
