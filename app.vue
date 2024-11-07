@@ -1,7 +1,9 @@
 <script setup lang="ts">
+const { getAbsoluteURL } = useAbsoluteURL();
+
 const title = "e621-top";
 const description = "Automatically updated top of artists and characters by number of posts on e621.net";
-const logo = "https://e621-top.github.io/img/logo-top.png";
+const logo = getAbsoluteURL("/img/logo-top.png");
 
 useHead({
   titleTemplate: (t) => (t ? `${t} - ` : "") + title,
@@ -10,11 +12,20 @@ useHead({
   ],
   htmlAttrs: { lang: "en", "data-bs-theme": "dark" }
 });
+const route = useRoute();
+useHead(() => ({
+  link: [
+    {
+      rel: "canonical",
+      href: getAbsoluteURL(route.path),
+    },
+  ],
+}));
 useSeoMeta({
   ogType: "website",
   ogTitle: title,
   ogSiteName: title,
-  ogUrl: "https://e621-top.github.io/",
+  ogUrl: getAbsoluteURL("/"),
   ogDescription: description,
   ogImage: logo,
   ogImageSecureUrl: logo,
