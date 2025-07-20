@@ -1,8 +1,6 @@
 <script setup lang="ts">
 useHead({
-  meta: [
-    { name: "description", content: "About e621-top.github.io" }
-  ]
+  meta: [{ name: 'description', content: 'About e621-top.github.io' }],
 });
 </script>
 <template>

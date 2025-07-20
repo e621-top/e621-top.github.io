@@ -1,9 +1,7 @@
 function getHash() {
-  return new URLSearchParams(location.hash.replace("#", "?"));
+  return new URLSearchParams(location.hash.replace('#', '?'));
 }
 
 export default function () {
-  return {
-    getHash
-  };
+  return { getHash };
 }

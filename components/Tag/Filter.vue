@@ -4,21 +4,21 @@ const props = defineProps<{ category?: Category }>();
 const filter = useFilter();
 
 const hideMLP = ref(false);
-const include = ref("");
-const exclude = ref("");
+const include = ref('');
+const exclude = ref('');
 
 function apply() {
   filter.value = {
     ...filter.value,
     hideMLP: hideMLP.value,
     include: include.value,
-    exclude: exclude.value
+    exclude: exclude.value,
   };
 }
 
 function clear() {
-  include.value = "";
-  exclude.value = "";
+  include.value = '';
+  exclude.value = '';
   apply();
 }
 clear();

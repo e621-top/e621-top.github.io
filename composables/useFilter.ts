@@ -1,7 +1,7 @@
-export const useFilter = () => useState<TagFilter>("filter", () => ({
+export const useFilter = () => useState<TagFilter>('filter', () => ({
   hideMLP: false,
-  include: "",
-  exclude: ""
+  include: '',
+  exclude: '',
 }));
 
 interface TagFilter {

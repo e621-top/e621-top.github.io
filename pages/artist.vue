@@ -1,8 +1,6 @@
 <script setup lang="ts">
 useHead({
-  meta: [
-    { name: "description", content: "Automatically updated top of artists by number of posts on e621.net" }
-  ]
+  meta: [{ name: 'description', content: 'Automatically updated top of artists by number of posts on e621.net' }],
 });
 </script>
 <template>

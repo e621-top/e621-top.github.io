@@ -1,38 +1,29 @@
 <script setup lang="ts">
-const { getAbsoluteURL } = useAbsoluteURL();
-
-const title = "e621-top";
-const description = "Automatically updated top of artists and characters by number of posts on e621.net";
-const logo = getAbsoluteURL("/img/logo-top.png");
+const title = 'e621-top';
+const description = 'Automatically updated top of artists and characters by number of posts on e621.net';
+const logo = useBaseURL('/img/logo-top.png');
 
 useHead({
-  titleTemplate: (t) => (t ? `${t} - ` : "") + title,
-  meta: [
-    { name: "description", content: description }
-  ],
-  htmlAttrs: { lang: "en", "data-bs-theme": "dark" }
+  titleTemplate: t => (t ? `${t} - ` : '') + title,
+  meta: [{ name: 'description', content: description }],
+  htmlAttrs: { 'lang': 'en', 'data-bs-theme': 'dark' },
+  link: [{ rel: 'canonical', href: useAbsoluteURL() }],
 });
-const route = useRoute();
-useHead(() => ({
-  link: [
-    {
-      rel: "canonical",
-      href: getAbsoluteURL(route.path),
-    },
-  ],
-}));
+onMounted(() => {
+  useHead(() => ({ link: [{ rel: 'canonical', href: useAbsoluteURL() }] }));
+});
 useSeoMeta({
-  ogType: "website",
+  ogType: 'website',
   ogTitle: title,
   ogSiteName: title,
-  ogUrl: getAbsoluteURL("/"),
+  ogUrl: useAbsoluteURL(),
   ogDescription: description,
   ogImage: logo,
   ogImageSecureUrl: logo,
   twitterTitle: title,
   twitterDescription: description,
   twitterImage: logo,
-  twitterCard: "summary"
+  twitterCard: 'summary',
 });
 </script>
 <template>

@@ -1,12 +1,10 @@
 <script setup lang="ts">
 useHead({
-  meta: [
-    { name: "description", content: "Top popular artists and characters from favorites on e621.net" }
-  ]
+  meta: [{ name: 'description', content: 'Top popular artists and characters from favorites on e621.net' }],
 });
 const { getFavorites } = useESIX();
 
-const username = ref("");
+const username = ref('');
 const pageLimit = ref(10);
 const tagLimit = ref(100);
 const page = ref(0);
@@ -14,28 +12,30 @@ const pending = computed(() => page.value > 0);
 const tags = ref<FavoriteTags>();
 
 async function apply() {
-  if (!username.value) { return; }
+  if (!username.value) return;
   try {
-    tags.value = await getFavorites(username.value, pageLimit.value, (p) => page.value = p);
-  } catch (error) {
+    tags.value = await getFavorites(username.value, pageLimit.value, p => page.value = p);
+  }
+  catch (error) {
     console.error(error);
-  } finally {
+  }
+  finally {
     page.value = 0;
   }
 }
 
 onMounted(() => {
   const { getItem, setItem } = useLocalStorage();
-  const data = getItem("favorites");
-  username.value = data?.username ?? "";
+  const data = getItem('favorites');
+  username.value = data?.username ?? '';
   tags.value = data?.tags;
 
   watch(tags, () => {
-    if (!tags.value) { return; }
-    setItem("favorites", {
+    if (!tags.value) return;
+    setItem('favorites', {
       username: username.value,
-      tags: tags.value
-    }
+      tags: tags.value,
+    },
     );
   });
 });

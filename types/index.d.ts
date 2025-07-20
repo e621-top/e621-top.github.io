@@ -1,4 +1,4 @@
-type Category = "artist" | "character"
+type Category = 'artist' | 'character';
 
 interface Tag {
   id: number

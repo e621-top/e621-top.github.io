@@ -14,17 +14,19 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3",
-    "nuxt-gtag": "^2.0.6"
+    "bootstrap": "^5.3.7",
+    "nuxt-gtag": "^3.0.3"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^0.6.1",
+    "@nuxt/eslint": "^1.6.0",
     "@types/bootstrap": "^5.2.10",
-    "eslint": "^9.14.0",
-    "nuxt": "^3.14.159",
-    "sass-loader": "^16.0.3",
-    "sass": "^1.80.6",
-    "typescript": "^5.6.3"
+    "eslint": "^9.31.0",
+    "nuxt": "^3.17.7",
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "typescript": "^5.8.3",
+    "vue": "latest",
+    "vue-router": "latest"
   },
   "type": "module",
   "private": true
