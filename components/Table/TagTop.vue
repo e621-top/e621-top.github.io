@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { tagPostsDay } from '~/utils/tag';
+
 const props = defineProps<Props>();
 interface Props {
   tags?: Tag[]
@@ -14,6 +16,7 @@ interface Props {
       <col style="width:0.5rem">
       <col style="width:auto">
       <col style="width:5rem">
+      <col style="width:1rem">
       <col style="width:1rem">
     </colgroup>
     <thead>
@@ -33,6 +36,9 @@ interface Props {
         <th v-tooltip title="Change since last update" scope="col">
           ∆
         </th>
+        <th v-tooltip title="Average posts per day" scope="col">
+          ~∆
+        </th>
       </tr>
     </thead>
     <tbody v-if="props.tags">
@@ -50,6 +56,7 @@ interface Props {
         </td>
         <td>{{ tag.post_count }}</td>
         <td>{{ (tag?.post_delta ?? 0) > 0 ? "+" : "" }}{{ tag.post_delta ?? "-" }}</td>
+        <td>~{{ tagPostsDay(tag) }}</td>
       </tr>
     </tbody>
   </table>
