@@ -21,7 +21,7 @@
     "@nuxt/eslint": "^1.6.0",
     "@types/bootstrap": "^5.2.10",
     "eslint": "^9.31.0",
-    "nuxt": "^3.17.7",
+    "nuxt": "^4.0.1",
     "sass": "^1.89.2",
     "sass-loader": "^16.0.5",
     "typescript": "^5.8.3",
