@@ -1,7 +1,7 @@
 {
   "name": "e621-top",
-  "version": "1.0.0",
-  "description": "Auto-updatable website with links to radio Record stations",
+  "version": "1.1.0",
+  "description": "Automatically updated top of artists and characters by number of posts",
   "author": "e621-top",
   "license": "MIT",
   "repository": "e621-top/e621-top.github.io",
@@ -18,15 +18,16 @@
     "nuxt-gtag": "^3.0.3"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.6.0",
+    "@nuxt/eslint": "^1.9.0",
     "@types/bootstrap": "^5.2.10",
-    "eslint": "^9.31.0",
-    "nuxt": "^3.17.7",
-    "sass": "^1.89.2",
+    "@types/node": "^22.18.9",
+    "eslint": "^9.37.0",
+    "nuxt": "^4.1.3",
+    "sass": "^1.93.2",
     "sass-loader": "^16.0.5",
-    "typescript": "^5.8.3",
-    "vue": "latest",
-    "vue-router": "latest"
+    "typescript": "^5.9.3",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
   },
   "type": "module",
   "private": true

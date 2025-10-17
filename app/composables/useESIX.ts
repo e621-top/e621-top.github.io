@@ -3,6 +3,7 @@ const endpoint_api = 'https://e621.net';
 const blacklist = new Set([
   'anon',
   'anonymous_artist',
+  'avoid_posting',
   'conditional_dnp',
   'fan_character',
   'sound_warning',
@@ -40,7 +41,7 @@ function countTags(tags: string[], tagsCount: Record<string, number>) {
 
 function toArray(tags: Record<string, number>): TagCount[] {
   return Object.keys(tags)
-    .map<TagCount>(name => ({ name, post_count: tags[name] }))
+    .map<TagCount>(name => ({ name, post_count: tags[name]! }))
     .toSorted((a, b) => b.post_count - a.post_count);
 }
 

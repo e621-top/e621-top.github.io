@@ -14,12 +14,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: { repository, branch, hash, date },
   },
-  compatibilityDate: '2025-07-20',
+  compatibilityDate: '2025-10-10',
+  // Silencing the deprecation warnings
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          silenceDeprecations: ['mixed-decls', 'color-functions', 'global-builtin', 'import'],
+          silenceDeprecations: ['color-functions', 'global-builtin', 'import'],
         },
       },
     },

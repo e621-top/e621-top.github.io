@@ -12,7 +12,7 @@ const { data, pending, tags, filtered } = useData(props.category, limit);
 </script>
 <template>
   <TagFilter :category="props.category" />
-  <div v-if="pending" class="card my-1">
+  <div v-if="!data || pending" class="card my-1">
     <div class="card-header text-muted">
       Loading...
     </div>
@@ -21,9 +21,11 @@ const { data, pending, tags, filtered } = useData(props.category, limit);
     <div class="card-header text-muted text-end">
       Updated at: {{ formatDate(new Date(data?.updated_at ?? 0)) }}
     </div>
-    <div class="card-body">
-      <TableTagTop :tags="tags" :filtered="filtered" />
-    </div>
+    <ClientOnly>
+      <div class="card-body">
+        <TableTagTop :tags="tags" :filtered="filtered" />
+      </div>
+    </ClientOnly>
     <div v-if="(data?.tags.length ?? 0) > tags.length" class="card-footer text-center">
       <button class="btn btn-primary" @click="more">
         Show more
